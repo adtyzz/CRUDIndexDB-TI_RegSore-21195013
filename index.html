@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD IndexedDB dengan Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mb-4">CRUD Mahasiswa</h1>
+
+    <form id="studentForm" class="mb-4">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" id="nim" class="form-control" placeholder="NIM" required>
+            </div>
+            <div class="col">
+                <input type="text" id="nama" class="form-control" placeholder="Nama" required>
+            </div>
+        </div>
+        <button type="submit" id="submitBtn" class="btn btn-primary mt-3">Tambah</button>
+    </form>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="studentList"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // Here you can include your app.js content
+    document.addEventListener("DOMContentLoaded", () => {
+        let db;
+        const studentForm = document.getElementById("studentForm");
+        const studentList = document.getElementById("studentList");
+
+        const request = window.indexedDB.open("mahasiswaDB", 1);
+
+        // ... (Your JavaScript code)
+    });
+</script>
+
+</body>
+</html>
